@@ -51,8 +51,8 @@ function findCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector(`#exampleDataList`).value;
-  findCity(city);
+  let cityElement = document.querySelector(`#exampleDataList`).value;
+  findCity(cityElement);
 }
 
 function searchLocation(position) {

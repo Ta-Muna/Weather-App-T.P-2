@@ -2,8 +2,9 @@ body {
   background: linear-gradient(#98b7e2, rgb(227, 231, 233));
 }
 .container {
-  padding: 30px;
+  padding: 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 .weather-app {
   max-width: 800px;
