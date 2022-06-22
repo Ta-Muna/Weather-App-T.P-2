@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sheCodesPlus - Week Seven - Homework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="Source/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <form id="city-search">
+          <div class="row">
+            <div class="col-9">
+              <input
+                class="form-control"
+                list="datalistOptions"
+                id="exampleDataList"
+                placeholder="Type City..."
+              />
+            </div>
+
+            <div class="col-2">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+                id="searchCity"
+              />
+            </div>
+            <div class="col-2">
+              <button
+                type="button"
+                class="form-control btn btn-primary shadow-sm"
+                id="current"
+              >
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+        <h1 id="currentCity"></h1>
+        <img src="images/sun.svg" alt="sunny" />
+        <h2 id="description">Sunny</h2>
+        <h3 class="temperatureNow">
+          <span class="current-temperature" id="temperature-Now"> 20</span>
+          <span class="unit-selection">
+            <a href="#" class="units" id="celsius">°C</a> 🌡
+            <a href="#" class="units" id="fahrenheit">°F</a></span
+          >
+        </h3>
+        <h4 id="current-day-time"></h4>
+        <br />
+        <div class="row">
+          <div class="col-4">
+            Today
+            <br />
+            <img src="images/sun.svg" alt="sunny" />
+            <div class="today-temp">20°C /15°C</div>
+          </div>
+          <div class="col-4">
+            Thursday
+            <br />
+            <img src="images/cloudy.svg" alt="cloudy" />
+            <div class="thursday-temp">16°C /13°C</div>
+          </div>
+          <div class="col-4">
+            Friday
+            <br />
+            <img src="images/sun.svg" alt="sunny" />
+            <div class="friday-temp">23°C/ 18°C</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://github.com/Ta-Muna/Weather-App-T.P" target="_blank"
+        >Open-source code</a
+      >
+      , by Tamari Pilia
+    </div>
+
+    <script src="Source/javaScript.js"></script>
+  </body>
+</html>
