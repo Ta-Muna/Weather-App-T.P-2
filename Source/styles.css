@@ -2,14 +2,17 @@ body {
   background: linear-gradient(#98b7e2, rgb(227, 231, 233));
 }
 .container {
-  text-align: center;
-  margin: 0px 110px;
-  padding: 159px;
+  padding: 30px;
   box-sizing: border-box;
 }
 .weather-app {
+  max-width: 800px;
+  text-align: center;
+  margin: 0px auto;
+  padding-top: 10px;
   background: linear-gradient(#ccd8e5, #98b7e2);
-  border: 0;
+  border: 1px solid #98b7e2;
+  border-radius: 10px;
   box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.2);
 }
 .row {
