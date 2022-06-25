@@ -46,6 +46,8 @@ function showNewTemperatureAndDescription(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 // Search Engine
@@ -85,18 +87,28 @@ currentButton.addEventListener(`click`, getCurrentLocation);
 findCity(`Tbilisi`);
 
 // Celsius and Fahrenheit
-function temperatureConversion(event) {
+function temperatureConversionToFahrenheit(event) {
   event.preventDefault();
   let fahrenheit = document.querySelector(`.current-temperature`);
-  fahrenheit.innerHTML = 68;
-}
-let replaceDegree = document.querySelector(`#fahrenheit`);
-replaceDegree.addEventListener(`click`, temperatureConversion);
 
-function backConversion(event) {
+  celsiusDegree.classList.remove("active");
+  fahrenheitDegree.classList.add("active");
+
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  fahrenheit.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitDegree = document.querySelector(`#fahrenheit`);
+fahrenheitDegree.addEventListener(`click`, temperatureConversionToFahrenheit);
+
+function backConversionToCelsius(event) {
   event.preventDefault();
   let celsius = document.querySelector(`.current-temperature`);
-  celsius.innerHTML = 20;
+  celsiusDegree.classList.add("active");
+  fahrenheitDegree.classList.remove("active");
+  celsius.innerHTML = Math.round(celsiusTemperature);
 }
-let replaceDegrees = document.querySelector(`#celsius`);
-replaceDegrees.addEventListener(`click`, backConversion);
+let celsiusDegree = document.querySelector(`#celsius`);
+celsiusDegree.addEventListener(`click`, backConversionToCelsius);
