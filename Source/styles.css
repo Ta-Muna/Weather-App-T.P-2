@@ -5,12 +5,13 @@ body {
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
-}
-.weather-app {
   max-width: 800px;
-  text-align: center;
+}
+
+.weather-app {
   margin: 0px auto;
   padding-top: 10px;
+
   background: linear-gradient(#ccd8e5, #98b7e2);
   border: 1px solid #98b7e2;
   border-radius: 10px;
@@ -33,9 +34,14 @@ body {
   background: rgba(243, 243, 243, 0.582);
 }
 
-.col-9 {
-  width: 40%;
-  margin: 0 0 0 190px;
+.col-6 {
+  max-width: 70%;
+  flex: 0 0 50%;
+}
+
+.col-2 {
+  max-width: 50%;
+  flex: 0 0 20%;
 }
 .btn:hover {
   background: rgba(243, 243, 243, 0.582);
