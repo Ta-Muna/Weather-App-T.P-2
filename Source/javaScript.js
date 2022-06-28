@@ -26,6 +26,29 @@ function formatDate(date) {
   return `${day}, ${hour}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector(`#forecast`);
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wedn", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+             <div class="col-4">
+              ${day}
+              <br />
+              <img src="images/sun.svg" alt="sunny" />
+              <div class="today-temp">
+                <span class="weather-forecast-max"> 20°C </span>
+                <span class="weather-forecast-min"> / 15°C </span>
+              </div>
+            </div>
+          `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 let currentDayAndTime = document.querySelector(`#current-day-time`);
 let now = new Date();
 
@@ -85,6 +108,7 @@ let currentButton = document.querySelector(`#current`);
 currentButton.addEventListener(`click`, getCurrentLocation);
 
 findCity(`Tbilisi`);
+displayForecast();
 
 // Celsius and Fahrenheit
 function temperatureConversionToFahrenheit(event) {
