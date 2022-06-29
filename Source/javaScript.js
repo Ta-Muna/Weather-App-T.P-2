@@ -26,7 +26,8 @@ function formatDate(date) {
   return `${day}, ${hour}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector(`#forecast`);
 
   let forecastHTML = `<div class="row">`;
@@ -71,6 +72,18 @@ function showNewTemperatureAndDescription(response) {
   iconElement.setAttribute("alt", response.data.weather[0].main);
 
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
+}
+
+// Function for 7 day forecast
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `434de5eada78e8cca4747491478592c5`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 // Search Engine
@@ -108,7 +121,6 @@ let currentButton = document.querySelector(`#current`);
 currentButton.addEventListener(`click`, getCurrentLocation);
 
 findCity(`Tbilisi`);
-displayForecast();
 
 // Celsius and Fahrenheit
 function temperatureConversionToFahrenheit(event) {
