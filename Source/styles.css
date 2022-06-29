@@ -45,13 +45,12 @@ body {
 }
 
 .col-6 {
-  max-width: 70%;
   flex: 0 0 50%;
 }
 
 .col-2 {
-  max-width: 50%;
-  flex: 0 0 20%;
+  flex: 0 0 25%;
+  margin: 0 0 0 -10px;
 }
 .btn:hover {
   background: rgba(243, 243, 243, 0.582);
